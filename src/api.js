@@ -41,4 +41,5 @@ router.post('/verify', (req, res) => {
 
 app.use('/', router)
 
-module.exports.handler = serverless(app)
+module.exports = app;
+module.exports.handler = serverless(app);
