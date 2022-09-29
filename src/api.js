@@ -25,7 +25,7 @@ router.post('/verify', (req, res) => {
     }
 
 
-    const secret = process.env.SECRET_KEY;
+    const secret = "6Lc8Bj4iAAAAAKTvQSSZnWisPSkX-xFArt9N_hdG";
     const verify = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${req.body.captcha}`
 
     request(verify, (err, response, body) => {
