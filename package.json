@@ -9,7 +9,9 @@
   "version": "1.0.0",
   "main": "./functions/api.js",
   "scripts": {
-    "dev": "nodemon api"
+    "dev": "nodemon api",
+    "start": "netlify-lambda serve functions",
+    "build": "netlify-lambda build functions"
   },
   "keywords": [],
   "author": "",
