@@ -9,12 +9,6 @@ const router = express.Router();
 app.use(express.json());
 app.use(cors());
 
-router.get('/', (req, res) => {
-    res.json({
-        'name': 'hello'
-    })
-})
-
 router.post('/verify', (req, res) => {
     if (
         req.body.captcha === undefined ||

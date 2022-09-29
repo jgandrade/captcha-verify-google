@@ -7,7 +7,7 @@
   },
   "name": "portfoliocaptchacheck",
   "version": "1.0.0",
-  "main": "./functions/api.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon api",
     "start": "./node_modules/.bin/netlify-lambda serve src",
