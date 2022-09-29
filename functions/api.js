@@ -3,13 +3,19 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const request = require('request');
+const serverless = require('serverless-http');
+const router = express.Router();
 
 app.use(express.json());
 app.use(cors());
 
-app.listen(3000, () => console.log("Listening to port 3000"));
+router.get('/', (req, res) => {
+    res.json({
+        'name': 'hello'
+    })
+})
 
-app.post('/verify', (req, res) => {
+router.post('/verify', (req, res) => {
     if (
         req.body.captcha === undefined ||
         req.body.captcha === '' ||
@@ -33,3 +39,6 @@ app.post('/verify', (req, res) => {
     })
 })
 
+app.use('/', router)
+
+module.exports.handler = serverless(app)
